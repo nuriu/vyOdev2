@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
-// Dosya Adı:           kuyruk.hpp
-// Dosya Açıklaması:    oluşturulacak kuyruk sınıflarına iskelet sağlama amaçlı
+// Dosya Adı:           onceliklikuyruk.hpp
+// Dosya Açıklaması:    öncelikli kuyruk sınıfı
 // Oluşturma Tarihi:    18.04.16
 // Oluşturan:           Nuri Uzunoğlu
 // Güncelleyenler:
@@ -8,24 +8,27 @@
 //
 //------------------------------------------------------------------------------
 
-#ifndef KUYRUK_HPP
-#define KUYRUK_HPP
+
+#ifndef ONCELIKLIKUYRUK_HPP
+#define ONCELIKLIKUYRUK_HPP
 
 #include <musteri.hpp>
 
-class Kuyruk
+class OncelikliKuyruk
 {
 public:
-    Kuyruk();
+    OncelikliKuyruk();
 
     // kuyruk fonksiyonları
     void Ekle();
     int Cikart();
     void Gozat();
 
+    void Listele();
+
 private:
     // birinci soru için gerekli müşteri kuyruğu
-    Musteri musteriler[];
+    Musteri musteriler[20];
 };
 
-#endif // KUYRUK_HPP
+#endif // ONCELIKLIKUYRUK_HPP

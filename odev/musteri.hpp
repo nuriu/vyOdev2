@@ -5,6 +5,7 @@
 // Oluşturan:           Nuri Uzunoğlu
 // Güncelleyenler:
 //                      Nuri Uzunoğlu (18.04.16)
+//
 //------------------------------------------------------------------------------
 
 #ifndef MUSTERI_HPP

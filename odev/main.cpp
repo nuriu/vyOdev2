@@ -10,18 +10,21 @@
 
 #include <iostream>
 
-#include <musteri.hpp>
+#include <daireselkuyruk.hpp>
+#include <onceliklikuyruk.hpp>
 
 using namespace std;
 
 void birinciSoruA()
 {
-
+    DaireselKuyruk d;
+    d.Listele();
 }
 
 void birinciSoruB()
 {
-
+    OncelikliKuyruk o;
+    o.Listele();
 }
 
 void ikinciSoru()
@@ -32,7 +35,7 @@ void ikinciSoru()
 int main(int argc, char *argv[])
 {
     birinciSoruA();
-    //birinciSoruB();
+    birinciSoruB();
     //ikinciSoru();
     return 0;
 }

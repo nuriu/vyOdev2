@@ -4,8 +4,11 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += main.cpp \
-    musteri.cpp
+    musteri.cpp \
+    daireselkuyruk.cpp \
+    onceliklikuyruk.cpp
 
 HEADERS += \
-    kuyruk.hpp \
-    musteri.hpp
+    musteri.hpp \
+    daireselkuyruk.hpp \
+    onceliklikuyruk.hpp

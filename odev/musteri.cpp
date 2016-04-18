@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 // Dosya Adı:           musteri.cpp
-// Dosya Açıklaması:    müşteri sınıfının davranışlarını içeriyor
+// Dosya Açıklaması:    müşteri sınıfının davranışları
 // Oluşturma Tarihi:    18.04.16
 // Oluşturan:           Nuri Uzunoğlu
 // Güncelleyenler:
