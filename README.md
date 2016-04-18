@@ -11,7 +11,7 @@ Yapılacaklar:
 		- [x] müşteriler için rastgele işlem süresi türetilecek (60-600 arası)  
 		- [x] dairesel kuyruk sınıfı oluşturulacak  
 		- [x] öncelikli kuyruk sınıfı oluşturulacak  
-		- [x] müşterilere numara atanası yapılacak  
+		- [x] müşterilere numara ataması yapılacak  
 
 		- [ ] öncelikli kuyruktaki müşteriler işlem süresine göre sıralanacak (herhangi bir sıralama algoritması ile olabilir)
 
@@ -36,9 +36,12 @@ Yapılacaklar:
 		- [ ] hızlı sıralama algoritması yazılacak (https://tr.wikipedia.org/wiki/H%C4%B1zl%C4%B1_s%C4%B1ralama)  
 
 		- [ ] rastgele veri oluşturucu fonksiyonu oluşturulacak (int tipinde 100, 750, 1500, 7500, 15000, 75000, 150000 elemanlı toplam 7 dizi oluşturacak)  
-		- [ ] rastgele verilerle oluşturulan dizileri oluşturulan algoritmalara gönderilecek ve çalıştırma zamanını hesaplayıp ekrana yazılacak.  
+		- [ ] rastgele verilerle oluşturulan diziler oluşturulan algoritmalara gönderilecek ve çalıştırma zamanını hesaplayıp ekrana yazılacak.  
 			- [ ] kabarcık  
 			- [ ] eklemeli  
 			- [ ] seçmeli  
 			- [ ] yığın  
 			- [ ] hızlı  
+
+	- [ ] proje raporu yazılacak
+	- [ ] e-posta gönderilecek
