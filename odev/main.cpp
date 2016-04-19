@@ -22,6 +22,7 @@
 #include <kabarciksiramala.hpp>
 #include <eklemelisiralama.hpp>
 #include <secmelisiralama.hpp>
+#include <hizlisiralama.hpp>
 
 using namespace std;
 

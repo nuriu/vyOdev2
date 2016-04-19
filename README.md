@@ -27,7 +27,7 @@ Yapılacaklar:
 		- [x] eklemeli sıralama algoritması yazılacak (https://tr.wikipedia.org/wiki/Eklemeli_s%C4%B1ralama)  
 		- [x] seçmeli sıralama algoritması yazılacak (https://tr.wikipedia.org/wiki/Se%C3%A7meli_s%C4%B1ralama)  
 		- [ ] yığın sıralaması algoritması yazılacak (https://tr.wikipedia.org/wiki/Y%C4%B1%C4%9F%C4%B1n_s%C4%B1ralamas%C4%B1)  
-		- [ ] hızlı sıralama algoritması yazılacak (https://tr.wikipedia.org/wiki/H%C4%B1zl%C4%B1_s%C4%B1ralama)  
+		- [x] hızlı sıralama algoritması yazılacak (https://tr.wikipedia.org/wiki/H%C4%B1zl%C4%B1_s%C4%B1ralama)  
 
 		- [ ] rastgele veri oluşturucu fonksiyonu oluşturulacak (int tipinde 100, 750, 1500, 7500, 15000, 75000, 150000 elemanlı toplam 7 dizi oluşturacak)  
 		- [ ] rastgele verilerle oluşturulan diziler oluşturulan algoritmalara gönderilecek ve çalıştırma zamanını hesaplayıp ekrana yazılacak.  

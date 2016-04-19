@@ -9,7 +9,8 @@ SOURCES += main.cpp \
     onceliklikuyruk.cpp \
     kabarciksiramala.cpp \
     eklemelisiralama.cpp \
-    secmelisiralama.cpp
+    secmelisiralama.cpp \
+    hizlisiralama.cpp
 
 HEADERS += \
     musteri.hpp \
@@ -17,4 +18,5 @@ HEADERS += \
     onceliklikuyruk.hpp \
     kabarciksiramala.hpp \
     eklemelisiralama.hpp \
-    secmelisiralama.hpp
+    secmelisiralama.hpp \
+    hizlisiralama.hpp
