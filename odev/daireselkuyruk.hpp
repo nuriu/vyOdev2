@@ -8,7 +8,6 @@
 //
 //------------------------------------------------------------------------------
 
-
 #ifndef DAIRESELKUYRUK_HPP
 #define DAIRESELKUYRUK_HPP
 

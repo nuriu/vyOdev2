@@ -6,9 +6,11 @@ CONFIG -= qt
 SOURCES += main.cpp \
     musteri.cpp \
     daireselkuyruk.cpp \
-    onceliklikuyruk.cpp
+    onceliklikuyruk.cpp \
+    kabarciksiramala.cpp
 
 HEADERS += \
     musteri.hpp \
     daireselkuyruk.hpp \
-    onceliklikuyruk.hpp
+    onceliklikuyruk.hpp \
+    kabarciksiramala.hpp

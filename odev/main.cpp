@@ -12,6 +12,7 @@
 
 #include <daireselkuyruk.hpp>
 #include <onceliklikuyruk.hpp>
+#include <kabarciksiramala.hpp>
 
 using namespace std;
 
@@ -29,14 +30,16 @@ void birinciSoruB()
 
 void ikinciSoru()
 {
-
+    int dizi[10] = {1,9,6,5,4,7,3,2,8,10};
+    KabarcikSiramala k;
+    k.Sirala(dizi, 10);
 }
 
 int main(int argc, char *argv[])
 {
-    birinciSoruA();
-    birinciSoruB();
-    //ikinciSoru();
+    //birinciSoruA();
+    //birinciSoruB();
+    ikinciSoru();
     return 0;
 }
 
