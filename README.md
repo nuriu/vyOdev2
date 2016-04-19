@@ -24,7 +24,7 @@ Yapılacaklar:
 
 	Soru 2:  
 		- [x] kabarcık sıralama algoritması yazılacak (https://tr.wikipedia.org/wiki/Kabarc%C4%B1k_s%C4%B1ralamas%C4%B1)  
-		- [ ] eklemeli sıralama algoritması yazılacak (https://tr.wikipedia.org/wiki/Eklemeli_s%C4%B1ralama)  
+		- [x] eklemeli sıralama algoritması yazılacak (https://tr.wikipedia.org/wiki/Eklemeli_s%C4%B1ralama)  
 		- [ ] seçmeli sıralama algoritması yazılacak (https://tr.wikipedia.org/wiki/Se%C3%A7meli_s%C4%B1ralama)  
 		- [ ] yığın sıralaması algoritması yazılacak (https://tr.wikipedia.org/wiki/Y%C4%B1%C4%9F%C4%B1n_s%C4%B1ralamas%C4%B1)  
 		- [ ] hızlı sıralama algoritması yazılacak (https://tr.wikipedia.org/wiki/H%C4%B1zl%C4%B1_s%C4%B1ralama)  

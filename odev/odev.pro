@@ -7,10 +7,12 @@ SOURCES += main.cpp \
     musteri.cpp \
     daireselkuyruk.cpp \
     onceliklikuyruk.cpp \
-    kabarciksiramala.cpp
+    kabarciksiramala.cpp \
+    eklemelisiralama.cpp
 
 HEADERS += \
     musteri.hpp \
     daireselkuyruk.hpp \
     onceliklikuyruk.hpp \
-    kabarciksiramala.hpp
+    kabarciksiramala.hpp \
+    eklemelisiralama.hpp
