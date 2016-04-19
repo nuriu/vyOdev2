@@ -1,5 +1,5 @@
 //------------------------------------------------------------------------------
-// Dosya Adı:           eklemelisiralama.hpp
+// Dosya Adı:           eklemelisiralama.cpp
 // Dosya Açıklaması:    eklemeli sıralama sınıfının sıralama davranışı
 // Oluşturma Tarihi:    19.04.16
 // Oluşturan:           Nuri Uzunoğlu

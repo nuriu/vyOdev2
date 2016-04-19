@@ -8,11 +8,13 @@ SOURCES += main.cpp \
     daireselkuyruk.cpp \
     onceliklikuyruk.cpp \
     kabarciksiramala.cpp \
-    eklemelisiralama.cpp
+    eklemelisiralama.cpp \
+    secmelisiralama.cpp
 
 HEADERS += \
     musteri.hpp \
     daireselkuyruk.hpp \
     onceliklikuyruk.hpp \
     kabarciksiramala.hpp \
-    eklemelisiralama.hpp
+    eklemelisiralama.hpp \
+    secmelisiralama.hpp

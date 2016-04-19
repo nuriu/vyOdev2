@@ -10,10 +10,18 @@
 
 #include <iostream>
 
+//------------------------------------------------------------------------------
+// KUYRUK SINIFLARI (1. Soru)
+//------------------------------------------------------------------------------
 #include <daireselkuyruk.hpp>
 #include <onceliklikuyruk.hpp>
+
+//------------------------------------------------------------------------------
+// SIRALAMA SINIFLARI (2. Soru)
+//------------------------------------------------------------------------------
 #include <kabarciksiramala.hpp>
 #include <eklemelisiralama.hpp>
+#include <secmelisiralama.hpp>
 
 using namespace std;
 
@@ -31,6 +39,7 @@ void birinciSoruB()
 
 void ikinciSoru()
 {
+
 }
 
 int main(int argc, char *argv[])
