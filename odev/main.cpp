@@ -115,7 +115,7 @@ int main(int argc, char *argv[])
 {
     //birinciSoruA();
     //birinciSoruB();
-    ikinciSoru();
+    //ikinciSoru();
     return 0;
 }
 
