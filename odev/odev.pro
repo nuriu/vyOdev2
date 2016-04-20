@@ -10,7 +10,8 @@ SOURCES += main.cpp \
     kabarciksiramala.cpp \
     eklemelisiralama.cpp \
     secmelisiralama.cpp \
-    hizlisiralama.cpp
+    hizlisiralama.cpp \
+    yiginsiralama.cpp
 
 HEADERS += \
     musteri.hpp \
@@ -19,4 +20,5 @@ HEADERS += \
     kabarciksiramala.hpp \
     eklemelisiralama.hpp \
     secmelisiralama.hpp \
-    hizlisiralama.hpp
+    hizlisiralama.hpp \
+    yiginsiralama.hpp
