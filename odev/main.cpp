@@ -19,6 +19,8 @@
 //------------------------------------------------------------------------------
 // SIRALAMA SINIFLARI (2. Soru)
 //------------------------------------------------------------------------------
+#include <ctime>
+
 #include <kabarciksiramala.hpp>
 #include <eklemelisiralama.hpp>
 #include <secmelisiralama.hpp>
@@ -51,13 +53,69 @@ void birinciSoruB()
 //------------------------------------------------------------------------------
 void ikinciSoru()
 {
+    int dizi[10] = {9, 5, 8, 7, 6, 4, 1, 3, 10, 2};
+
+    //--------------------------------------------------------------------------
+    // KABARCIK SIRALAMA
+    //--------------------------------------------------------------------------
+    /*
+    KabarcikSiramala k;
+    int baslangic = clock();
+    k.Sirala(dizi, 10);
+    int son = clock();
+    cout << "Kabarcık Sıralama Çalışma Zamanı: " << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << endl;
+    */
+
+    //--------------------------------------------------------------------------
+    // EKLEMELİ SIRALAMA
+    //--------------------------------------------------------------------------
+    /*
+    EklemeliSiralama e;
+    int baslangic = clock();
+    e.Sirala(dizi, 10);
+    int son = clock();
+    cout << "Eklemeli Sıralama Çalışma Zamanı: " << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << endl;
+    */
+
+    //--------------------------------------------------------------------------
+    // SEÇMELİ SIRALAMA
+    //--------------------------------------------------------------------------
+    /*
+    SecmeliSiralama s;
+    int baslangic = clock();
+    s.Sirala(dizi, 10);
+    int son = clock();
+    cout << "Seçmeli Sıralama Çalışma Zamanı: " << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << endl;
+    */
+
+    //--------------------------------------------------------------------------
+    // HIZLI SIRALAMA
+    //--------------------------------------------------------------------------
+    /*
+    HizliSiralama h;
+    int baslangic = clock();
+    h.Sirala(dizi, 0, 9);
+    int son = clock();
+    cout << "Hızlı Sıralama Çalışma Zamanı: " << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << endl;
+    */
+
+    //--------------------------------------------------------------------------
+    // YIĞIN SIRALAMASI
+    //--------------------------------------------------------------------------
+    /*
+    YiginSiralama y;
+    int baslangic = clock();
+    y.Sirala(dizi, 10);
+    int son = clock();
+    cout << "Yığın Sıralaması Çalışma Zamanı: " << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << endl;
+    */
 }
 
 int main(int argc, char *argv[])
 {
     //birinciSoruA();
     //birinciSoruB();
-    //ikinciSoru();
+    ikinciSoru();
     return 0;
 }
 
