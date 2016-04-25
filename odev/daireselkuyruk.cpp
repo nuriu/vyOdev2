@@ -4,8 +4,8 @@
 // Oluşturma Tarihi:    18.04.16
 // Oluşturan:           Nuri Uzunoğlu
 // Güncelleyenler:
-//                      Nuri Uzunoğlu (18.04.16)
-//
+//                      Nuri Uzunoğlu   (18.04.16)
+//                      Kadir Sefa Ünal (25.04.16)
 //------------------------------------------------------------------------------
 
 #include <iostream>

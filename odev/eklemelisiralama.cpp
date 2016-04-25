@@ -4,8 +4,8 @@
 // Oluşturma Tarihi:    19.04.16
 // Oluşturan:           Nuri Uzunoğlu
 // Güncelleyenler:
-//                      Nuri Uzunoğlu (19.04.16)
-//
+//                      Nuri Uzunoğlu   (19.04.16)
+//                      Kadir Sefa Ünal (25.04.16)
 //------------------------------------------------------------------------------
 
 #include <eklemelisiralama.hpp>
