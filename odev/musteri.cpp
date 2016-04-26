@@ -15,11 +15,13 @@
 
 Musteri::Musteri()
 {
-    islemSuresiUret();
+    //islemSuresiUret();
+    this->islemSuresi = 0;
 }
 
 void Musteri::islemSuresiUret()
 {
+
     // 600'den küçük olan rastgele bir sayı üret
     int rastgeleSayi = (rand() % 600) + 1;
 

@@ -6,6 +6,7 @@
 // Güncelleyenler:
 //                      Nuri Uzunoğlu   (18.04.16)
 //                      Kadir Sefa Ünal (25.04.16)
+//                                      (26.04.16)
 //------------------------------------------------------------------------------
 
 #include <iostream>
@@ -15,11 +16,54 @@ using namespace std;
 
 DaireselKuyruk::DaireselKuyruk()
 {
-    // kuyruktaki müşterilere numara atanması
-    for (int i = 0; i < 20; ++i)
+    this->boyut = 20;
+}
+
+void DaireselKuyruk::Ekle(Musteri musteri)
+{
+    if(miktar == boyut)
+        cout << "Kuyruk dolu!";
+
+    if(on == -1)
+        on = 0;
+
+    if(arka == boyut - 1)
     {
-        this->musteriler[i].numara = i + 1;
+        arka = 0;
+        musteriler[arka] = musteri;
     }
+    else
+    {
+        arka++;
+        musteriler[arka] = musteri;
+    }
+    miktar++;
+}
+Musteri DaireselKuyruk::Cikart()
+{
+    if(BosMu())
+        cout << "Kuyruk boş!";
+
+    Musteri gecici = this->musteriler[on];
+    Musteri mus;
+    this->musteriler[on] = mus;
+
+    if(on == boyut - 1)
+        on = 0;
+    else
+        on++;
+    //işlemler eklenecek
+    miktar--;
+    return gecici;
+}
+Musteri DaireselKuyruk::Gozat()
+{
+    return this->musteriler[on];
+}
+
+bool DaireselKuyruk::BosMu()
+{
+    return (miktar == 0);
 }
 
 void DaireselKuyruk::Listele()

@@ -7,6 +7,7 @@
 //                      Nuri Uzunoğlu   (18.04.16)
 //                                      (25.04.16)
 //                      Kadir Sefa Ünal (25.04.16)
+//                                      (26.04.16)
 //------------------------------------------------------------------------------
 
 #include <iostream>
@@ -44,8 +45,29 @@ void RastgeleVeriUret(int *dizi, int elemanSayisi)
 //------------------------------------------------------------------------------
 void birinciSoruA()
 {
+    srand(time(NULL));
     DaireselKuyruk d;
+    Musteri m;
+    int toplamIslemSuresi = 0;
+    for(int i = 0; i < 20; i++)
+    {
+        m.numara = i + 1;
+        m.islemSuresiUret();
+        d.Ekle(m);
+    }
     d.Listele();
+
+    for(int i = 0; i < 20; i++)
+    {
+        m = d.Cikart();
+        toplamIslemSuresi += m.islemSuresi;
+        cout << endl << m.numara
+             << "\tnumarali musterinin toplam bekleme suresi: "
+             << toplamIslemSuresi;
+    }
+
+    cout << endl << "Ortalama islem suresi: "
+         << (toplamIslemSuresi / 20) << endl;
 }
 
 //------------------------------------------------------------------------------
@@ -60,7 +82,6 @@ void birinciSoruB()
 //------------------------------------------------------------------------------
 // 2. SORU - SIRALAMA ALGORİTMALARI UYGULAMALARI
 //------------------------------------------------------------------------------
-
 void kabarcikSiralama(int dizi[], int boyut)
 {
     int *geciciDizi = dizi;

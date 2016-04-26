@@ -4,8 +4,9 @@
 // Oluşturma Tarihi:    18.04.16
 // Oluşturan:           Nuri Uzunoğlu
 // Güncelleyenler:
-//                      Nuri Uzunoğlu (18.04.16)
-//
+//                      Nuri Uzunoğlu   (18.04.16)
+//                      Kadir Sefa ÜNAL (25.05.16)
+//                                      (26.04.16)
 //------------------------------------------------------------------------------
 
 #ifndef DAIRESELKUYRUK_HPP
@@ -19,13 +20,19 @@ public:
     DaireselKuyruk();
 
     // kuyruk fonksiyonları
-    void Ekle();
-    int Cikart();
-    void Gozat();
-
+    void Ekle(Musteri musteri);
+    Musteri Cikart();
+    Musteri Gozat();
+    bool BosMu();
     void Listele();
 
+
 private:
+    int on = -1;
+    int arka = -1;
+    int boyut = 0;
+    int miktar = 0;
+
     // birinci soru için gerekli müşteri kuyruğu
     Musteri musteriler[20];
 };
