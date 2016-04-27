@@ -32,12 +32,11 @@
 
 using namespace std;
 
-
-void birinciSoru()
-{
 //------------------------------------------------------------------------------
 // 1. SORU - DAİRESEL KUYRUK UYGULAMASI
 //------------------------------------------------------------------------------
+void birinciSoru()
+{
     srand(time(NULL));
     DaireselKuyruk d;
     OncelikliKuyruk o1, o2;
@@ -123,6 +122,27 @@ void birinciSoru()
             }
         }
     }
+
+//------------------------------------------------------------------------------
+    cout << endl << endl << "---" << endl << endl;
+    for (int i = 0; i < 20; i++)
+    {
+        // birincisinin ikincisinden büyük olduğu durumları bul
+        for(int j = 0; j < 20; j++)
+        {
+            if((mOncelikBK[i].numara == musteriler[j].numara) &&
+                mOncelikBK[i].islemSuresi < musteriler[j].islemSuresi)
+            {
+                int fark = musteriler[j].islemSuresi - mOncelikBK[i].islemSuresi;
+                int yuzde = (fark * 100) / musteriler[j].islemSuresi ;
+
+                cout << mOncelikBK[i].numara << "\tnumarali musteri\t->\t"
+                     << fark << "\tsn zaman kazanmistir.  "
+                     << yuzde << " %" << endl;
+            }
+        }
+    }
+
 }
 
 
@@ -209,8 +229,6 @@ void ikinciSoru()
     RastgeleVeriUret(dizi15000, 15000);
     RastgeleVeriUret(dizi75000, 75000);
     RastgeleVeriUret(dizi150000, 150000);
-    for(int i = 0; i < 100; i++)
-        cout << dizi100[i] << endl;
     //--------------------------------------------------------------------------
     // KABARCIK SIRALAMA
     //--------------------------------------------------------------------------
@@ -294,8 +312,8 @@ void ikinciSoru()
 
 int main(int argc, char *argv[])
 {
-    birinciSoru();
-    //ikinciSoru();
+    //birinciSoru();
+    ikinciSoru();
     return 0;
 }
 
