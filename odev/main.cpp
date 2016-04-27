@@ -8,6 +8,7 @@
 //                                      (25.04.16)
 //                      Kadir Sefa Ünal (25.04.16)
 //                                      (26.04.16)
+//                                      (27.04.16)
 //------------------------------------------------------------------------------
 
 #include <iostream>
@@ -32,28 +33,24 @@
 using namespace std;
 
 
-void RastgeleVeriUret(int *dizi, int elemanSayisi)
+void birinciSoru()
 {
-    for (int i = 0; i < elemanSayisi; i++)
-    {
-        dizi[i] = rand();
-    }
-}
-
 //------------------------------------------------------------------------------
 // 1. SORU - DAİRESEL KUYRUK UYGULAMASI
 //------------------------------------------------------------------------------
-void birinciSoruA()
-{
     srand(time(NULL));
     DaireselKuyruk d;
-    Musteri m;
+    OncelikliKuyruk o1, o2;
+    Musteri m, musteriler[20],mOncelikKB[20], mOncelikBK[20];
     int toplamIslemSuresi = 0;
     for(int i = 0; i < 20; i++)
     {
         m.numara = i + 1;
         m.islemSuresiUret();
         d.Ekle(m);
+        o1.EkleKucuktenBuyuge(m);
+        o2.EkleBuyuktenKucuge(m);
+
     }
     d.Listele();
 
@@ -61,27 +58,85 @@ void birinciSoruA()
     {
         m = d.Cikart();
         toplamIslemSuresi += m.islemSuresi;
+        musteriler[i].numara = m.numara;
+        musteriler[i].islemSuresi = toplamIslemSuresi;
         cout << endl << m.numara
              << "\tnumarali musterinin toplam bekleme suresi: "
              << toplamIslemSuresi;
     }
 
     cout << endl << "Ortalama islem suresi: "
-         << (toplamIslemSuresi / 20) << endl;
-}
+         << double(toplamIslemSuresi / 20) << endl;
 
 //------------------------------------------------------------------------------
 // 1. SORU - ÖNCELİKLİ KUYRUK UYGULAMASI
 //------------------------------------------------------------------------------
-void birinciSoruB()
-{
-    OncelikliKuyruk o;
-    o.Listele();
+    toplamIslemSuresi = 0;
+    o1.Listele();
+    for(int i = 0; i < 20; i++)
+    {
+        m = o1.Cikart();
+        toplamIslemSuresi += m.islemSuresi;
+        mOncelikKB[i].numara = m.numara;
+        mOncelikKB[i].islemSuresi = toplamIslemSuresi;
+        cout << endl << m.numara
+             << "\tnumarali musterinin toplam bekleme suresi: "
+             << toplamIslemSuresi;
+    }
+    cout << endl << "Ortalama islem suresi: "
+         << double(toplamIslemSuresi / 20) << endl;
+
+//------------------------------------------------------------------------------
+
+     toplamIslemSuresi = 0;
+     o2.Listele();
+     for(int i = 0; i < 20; i++)
+     {
+         m = o2.Cikart();
+         toplamIslemSuresi += m.islemSuresi;
+         mOncelikBK[i].numara = m.numara;
+         mOncelikBK[i].islemSuresi = toplamIslemSuresi;
+         cout << endl << m.numara
+              << "\tnumarali musterinin toplam bekleme suresi: "
+              << toplamIslemSuresi;
+     }
+     cout << endl << "Ortalama islem suresi: "
+          << double(toplamIslemSuresi / 20) << endl;
+
+//------------------------------------------------------------------------------
+    cout << endl << endl << "Zaman kazanan musteri listesi" << endl << endl;
+
+    for (int i = 0; i < 20; i++)
+    {
+        // birincisinin ikincisinden büyük olduğu durumları bul
+        for(int j = 0; j < 20; j++)
+        {
+            if((mOncelikKB[i].numara == musteriler[j].numara) &&
+                mOncelikKB[i].islemSuresi < musteriler[j].islemSuresi)
+            {
+                int fark = musteriler[j].islemSuresi - mOncelikKB[i].islemSuresi;
+                int yuzde = (fark * 100) / musteriler[j].islemSuresi ;
+
+                cout << mOncelikKB[i].numara << "\tnumarali musteri\t->\t"
+                     << fark << "\tsn zaman kazanmistir.  "
+                     << yuzde << " %" << endl;
+            }
+        }
+    }
 }
+
+
 
 //------------------------------------------------------------------------------
 // 2. SORU - SIRALAMA ALGORİTMALARI UYGULAMALARI
 //------------------------------------------------------------------------------
+
+void RastgeleVeriUret(int *dizi, int elemanSayisi)
+{
+    for (int i = 0; i < elemanSayisi; i++)
+        dizi[i] = rand();
+}
+
 void kabarcikSiralama(int dizi[], int boyut)
 {
     int *geciciDizi = dizi;
@@ -89,7 +144,8 @@ void kabarcikSiralama(int dizi[], int boyut)
     int baslangic = clock();
     k.Sirala(geciciDizi, boyut);
     int son = clock();
-    cout << "|\t" << boyut << " elemanlı: " << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << endl;
+    cout << "|\t" << boyut << " elemanlı: "
+         << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << endl;
 }
 
 void eklemeliSiralama(int dizi[], int boyut)
@@ -99,7 +155,8 @@ void eklemeliSiralama(int dizi[], int boyut)
     int baslangic = clock();
     e.Sirala(geciciDizi, boyut);
     int son = clock();
-    cout << "|\t" << boyut << " elemanlı: " << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << endl;
+    cout << "|\t" << boyut << " elemanlı: "
+         << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << endl;
 }
 
 void secmeliSiralama(int dizi[], int boyut)
@@ -109,7 +166,8 @@ void secmeliSiralama(int dizi[], int boyut)
     int baslangic = clock();
     s.Sirala(geciciDizi, boyut);
     int son = clock();
-    cout << "|\t" << boyut << " elemanlı: " << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << endl;
+    cout << "|\t" << boyut << " elemanlı: "
+         << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << endl;
 }
 
 void hizliSiralama(int dizi[], int boyut)
@@ -119,7 +177,8 @@ void hizliSiralama(int dizi[], int boyut)
     int baslangic = clock();
     h.Sirala(geciciDizi, 0, boyut - 1);
     int son = clock();
-    cout << "|\t" << boyut << " elemanlı: " << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << endl;
+    cout << "|\t" << boyut << " elemanlı: "
+         << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << endl;
 }
 
 void yiginSiralama(int dizi[], int boyut)
@@ -129,7 +188,8 @@ void yiginSiralama(int dizi[], int boyut)
     int baslangic = clock();
     y.Sirala(geciciDizi, boyut);
     int son = clock();
-    cout << "|\t" << boyut << " elemanlı: " << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << endl;
+    cout << "|\t" << boyut << " elemanlı: "
+         << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << endl;
 }
 
 void ikinciSoru()
@@ -142,6 +202,15 @@ void ikinciSoru()
     int dizi75000[75000];
     int dizi150000[150000];
 
+    RastgeleVeriUret(dizi100, 100);
+    RastgeleVeriUret(dizi750, 750);
+    RastgeleVeriUret(dizi1500, 1500);
+    RastgeleVeriUret(dizi7500, 7500);
+    RastgeleVeriUret(dizi15000, 15000);
+    RastgeleVeriUret(dizi75000, 75000);
+    RastgeleVeriUret(dizi150000, 150000);
+    for(int i = 0; i < 100; i++)
+        cout << dizi100[i] << endl;
     //--------------------------------------------------------------------------
     // KABARCIK SIRALAMA
     //--------------------------------------------------------------------------
@@ -157,7 +226,6 @@ void ikinciSoru()
     kabarcikSiralama(dizi75000, 75000);
     kabarcikSiralama(dizi150000, 150000);
     cout << "|\t" << endl;
-
     //--------------------------------------------------------------------------
     // EKLEMELİ SIRALAMA
     //--------------------------------------------------------------------------
@@ -226,8 +294,7 @@ void ikinciSoru()
 
 int main(int argc, char *argv[])
 {
-    birinciSoruA();
-    //birinciSoruB();
+    birinciSoru();
     //ikinciSoru();
     return 0;
 }

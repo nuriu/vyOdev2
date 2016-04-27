@@ -52,7 +52,7 @@ Musteri DaireselKuyruk::Cikart()
         on = 0;
     else
         on++;
-    //işlemler eklenecek
+
     miktar--;
     return gecici;
 }
@@ -70,5 +70,6 @@ void DaireselKuyruk::Listele()
 {
     cout << "\nDairesel Kuyruktaki Müşteriler:" << endl;
     for (int i = 0; i < 20; ++i)
-        cout << this->musteriler[i].numara << ": " << this->musteriler[i].islemSuresi << endl;
+        cout << this->musteriler[i].numara << "\t: "
+             << this->musteriler[i].islemSuresi << endl;
 }
