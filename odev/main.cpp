@@ -6,6 +6,7 @@
 // Güncelleyenler:
 //                      Nuri Uzunoğlu   (18.04.16)
 //                                      (25.04.16)
+//                                      (28.04.16)
 //                      Kadir Sefa Ünal (25.04.16)
 //                                      (26.04.16)
 //                                      (27.04.16)
@@ -32,9 +33,6 @@
 
 using namespace std;
 
-//------------------------------------------------------------------------------
-// 1. SORU - DAİRESEL KUYRUK UYGULAMASI
-//------------------------------------------------------------------------------
 void birinciSoru()
 {
     srand(time(NULL));
@@ -51,60 +49,50 @@ void birinciSoru()
         o2.EkleBuyuktenKucuge(m);
 
     }
-    d.Listele();
-
+    //--------------------------------------------------------------------------
+    // 1. SORU - DAİRESEL KUYRUK UYGULAMASI
+    //--------------------------------------------------------------------------
+    cout << "|---------------------------------------------------------" << endl;
+    cout << "| DAİRESEL KUYRUKTAKİ MÜŞTERİLER" << endl;
+    cout << "|---------------------------------------------------------" << endl;
+    cout << "| " << endl << "| No: \t Bekleme Süresi: \t Toplam Bekleme Süresi:" << endl;
     for(int i = 0; i < 20; i++)
     {
         m = d.Cikart();
         toplamIslemSuresi += m.islemSuresi;
         musteriler[i].numara = m.numara;
         musteriler[i].islemSuresi = toplamIslemSuresi;
-        cout << endl << m.numara
-             << "\tnumarali musterinin toplam bekleme suresi: "
-             << toplamIslemSuresi;
+        cout << "| " << m.numara << "\t\t" << m.islemSuresi << "\t\t\t"
+             << toplamIslemSuresi << endl;
     }
 
-    cout << endl << "Ortalama islem suresi: "
-         << double(toplamIslemSuresi / 20) << endl;
+    cout << "| " << endl << "| Ortalama islem suresi: "
+         << double(toplamIslemSuresi / 20) << endl << "| " << endl;
 
-//------------------------------------------------------------------------------
-// 1. SORU - ÖNCELİKLİ KUYRUK UYGULAMASI
-//------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
+    // 1. SORU - ÖNCELİKLİ KUYRUK UYGULAMASI
+    //--------------------------------------------------------------------------
+    cout << "|---------------------------------------------------------" << endl;
+    cout << "| ÖNCELİKLİ KUYRUKTAKİ MÜŞTERİLER (KÜÇÜKTEN BÜYÜĞE)" << endl;
+    cout << "|---------------------------------------------------------" << endl;
+    cout << "| " << endl << "| No: \t Bekleme Süresi: \t Toplam Bekleme Süresi:" << endl;
     toplamIslemSuresi = 0;
-    o1.Listele();
     for(int i = 0; i < 20; i++)
     {
         m = o1.Cikart();
         toplamIslemSuresi += m.islemSuresi;
         mOncelikKB[i].numara = m.numara;
         mOncelikKB[i].islemSuresi = toplamIslemSuresi;
-        cout << endl << m.numara
-             << "\tnumarali musterinin toplam bekleme suresi: "
-             << toplamIslemSuresi;
+        cout << "| " << m.numara << "\t\t" << m.islemSuresi << "\t\t\t"
+             << toplamIslemSuresi << endl;
     }
-    cout << endl << "Ortalama islem suresi: "
-         << double(toplamIslemSuresi / 20) << endl;
+    cout << "| " << endl << "| Ortalama islem suresi: "
+         << double(toplamIslemSuresi / 20) << endl << "| " << endl;
 
-//------------------------------------------------------------------------------
-
-     toplamIslemSuresi = 0;
-     o2.Listele();
-     for(int i = 0; i < 20; i++)
-     {
-         m = o2.Cikart();
-         toplamIslemSuresi += m.islemSuresi;
-         mOncelikBK[i].numara = m.numara;
-         mOncelikBK[i].islemSuresi = toplamIslemSuresi;
-         cout << endl << m.numara
-              << "\tnumarali musterinin toplam bekleme suresi: "
-              << toplamIslemSuresi;
-     }
-     cout << endl << "Ortalama islem suresi: "
-          << double(toplamIslemSuresi / 20) << endl;
-
-//------------------------------------------------------------------------------
-    cout << endl << endl << "Zaman kazanan musteri listesi" << endl << endl;
-
+    //--------------------------------------------------------------------------
+    cout << "|---------------------------------------------------------------------------" << endl;
+    cout << "| KAZANIMLAR" << endl;
+    cout << "|---------------------------------------------------------------------------" << endl;
     for (int i = 0; i < 20; i++)
     {
         // birincisinin ikincisinden büyük olduğu durumları bul
@@ -116,15 +104,35 @@ void birinciSoru()
                 int fark = musteriler[j].islemSuresi - mOncelikKB[i].islemSuresi;
                 int yuzde = (fark * 100) / musteriler[j].islemSuresi ;
 
-                cout << mOncelikKB[i].numara << "\tnumarali musteri\t->\t"
+                cout << "| " << mOncelikKB[i].numara << "\tnumarali musteri\t->\t"
                      << fark << "\tsn zaman kazanmistir.  "
                      << yuzde << " %" << endl;
             }
         }
     }
 
-//------------------------------------------------------------------------------
-    cout << endl << endl << "---" << endl << endl;
+    //--------------------------------------------------------------------------
+    cout << "| " << endl << "|---------------------------------------------------------" << endl;
+    cout << "| ÖNCELİKLİ KUYRUKTAKİ MÜŞTERİLER (BÜYÜKTEN KÜÇÜĞE)" << endl;
+    cout << "|---------------------------------------------------------" << endl;
+    cout << "| " << endl << "| No: \t Bekleme Süresi: \t Toplam Bekleme Süresi:" << endl;
+    toplamIslemSuresi = 0;
+    for(int i = 0; i < 20; i++)
+    {
+        m = o2.Cikart();
+        toplamIslemSuresi += m.islemSuresi;
+        mOncelikBK[i].numara = m.numara;
+        mOncelikBK[i].islemSuresi = toplamIslemSuresi;
+        cout << "| " << m.numara << "\t\t" << m.islemSuresi << "\t\t\t"
+             << toplamIslemSuresi << endl;
+    }
+    cout << "| " << endl << "| Ortalama islem suresi: "
+         << double(toplamIslemSuresi / 20) << endl << "| " << endl;
+
+    //--------------------------------------------------------------------------
+    cout << "|---------------------------------------------------------------------------" << endl;
+    cout << "| KAZANIMLAR" << endl;
+    cout << "|---------------------------------------------------------------------------" << endl;
     for (int i = 0; i < 20; i++)
     {
         // birincisinin ikincisinden büyük olduğu durumları bul
@@ -136,16 +144,15 @@ void birinciSoru()
                 int fark = musteriler[j].islemSuresi - mOncelikBK[i].islemSuresi;
                 int yuzde = (fark * 100) / musteriler[j].islemSuresi ;
 
-                cout << mOncelikBK[i].numara << "\tnumarali musteri\t->\t"
+                cout << "| " << mOncelikBK[i].numara << "\tnumarali musteri\t->\t"
                      << fark << "\tsn zaman kazanmistir.  "
                      << yuzde << " %" << endl;
             }
         }
     }
-
+    cout << "| " << endl;
+    cout << "|---------------------------------------------------------------------------" << endl;
 }
-
-
 
 //------------------------------------------------------------------------------
 // 2. SORU - SIRALAMA ALGORİTMALARI UYGULAMALARI
@@ -312,8 +319,8 @@ void ikinciSoru()
 
 int main(int argc, char *argv[])
 {
-    //birinciSoru();
-    ikinciSoru();
+    birinciSoru();
+    //ikinciSoru();
     return 0;
 }
 
