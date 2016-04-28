@@ -171,7 +171,7 @@ void kabarcikSiralama(int dizi[], int boyut)
     int baslangic = clock();
     k.Sirala(geciciDizi, boyut);
     int son = clock();
-    cout << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << "   |   ";
+    cout << setw(10) << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << " | ";
 }
 
 void eklemeliSiralama(int dizi[], int boyut)
@@ -181,7 +181,7 @@ void eklemeliSiralama(int dizi[], int boyut)
     int baslangic = clock();
     e.Sirala(geciciDizi, boyut);
     int son = clock();
-    cout << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << "    |   ";
+    cout << setw(10) << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << " | ";
 }
 
 void secmeliSiralama(int dizi[], int boyut)
@@ -191,7 +191,7 @@ void secmeliSiralama(int dizi[], int boyut)
     int baslangic = clock();
     s.Sirala(geciciDizi, boyut);
     int son = clock();
-    cout << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << "   |   ";
+    cout << setw(10) << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << " | ";
 }
 
 void hizliSiralama(int dizi[], int boyut)
@@ -201,7 +201,7 @@ void hizliSiralama(int dizi[], int boyut)
     int baslangic = clock();
     h.Sirala(geciciDizi, 0, boyut - 1);
     int son = clock();
-    cout << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << "   |   ";
+    cout << setw(10) << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << " | ";
 }
 
 void yiginSiralama(int dizi[], int boyut)
@@ -211,7 +211,7 @@ void yiginSiralama(int dizi[], int boyut)
     int baslangic = clock();
     y.Sirala(geciciDizi, boyut);
     int son = clock();
-    cout << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << "   |   ";
+    cout << setw(10) << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << " | ";
 }
 
 void ikinciSoru()
@@ -232,66 +232,64 @@ void ikinciSoru()
     RastgeleVeriUret(dizi75000, 75000);
     RastgeleVeriUret(dizi150000, 150000);
 
-    cout << "|----------------------------------------------------------------------" << endl;
-    cout << "|   BOYUT   |  KABARCIK  |  EKLEMELİ  |  SEÇMELİ  |  HIZLI  |  YIĞIN  |" << endl;
-    cout << "|----------------------------------------------------------------------" << endl;
+    cout << "|-----------------------------------------------------------------------------" << endl;
+    cout << "|   BOYUT   |  KABARCIK  |  EKLEMELİ  |  SEÇMELİ   |    HIZLI   |    YIĞIN   |" << endl;
+    cout << "|-----------------------------------------------------------------------------" << endl;
 
-    cout << "|    100    |    ";
+    cout << "|    100    | ";
     kabarcikSiralama(dizi100, 100);
     eklemeliSiralama(dizi100, 100);
     secmeliSiralama(dizi100, 100);
     hizliSiralama(dizi100, 100);
     yiginSiralama(dizi100, 100);
 
-    cout << endl << "|    750    |    ";
+    cout << endl << "|    750    | ";
     kabarcikSiralama(dizi750, 750);
     eklemeliSiralama(dizi750, 750);
     secmeliSiralama(dizi750, 750);
     hizliSiralama(dizi750, 750);
     yiginSiralama(dizi750, 750);
 
-    cout << endl << "|    1500   |    ";
+    cout << endl << "|    1500   | ";
     kabarcikSiralama(dizi1500, 1500);
     eklemeliSiralama(dizi1500, 1500);
     secmeliSiralama(dizi1500, 1500);
     hizliSiralama(dizi1500, 1500);
     yiginSiralama(dizi1500, 1500);
 
-    cout << endl << "|    7500   |    ";
+    cout << endl << "|    7500   | ";
     kabarcikSiralama(dizi7500, 7500);
     eklemeliSiralama(dizi7500, 7500);
     secmeliSiralama(dizi7500, 7500);
     hizliSiralama(dizi7500, 7500);
     yiginSiralama(dizi7500, 7500);
 
-    cout << endl << "|    15000  |    ";
+    cout << endl << "|    15000  | ";
     kabarcikSiralama(dizi15000, 15000);
     eklemeliSiralama(dizi15000, 15000);
     secmeliSiralama(dizi15000, 15000);
     hizliSiralama(dizi15000, 15000);
     yiginSiralama(dizi15000, 15000);
 
-    cout << endl << "|    75000  |    ";
+    cout << endl << "|    75000  | ";
     kabarcikSiralama(dizi75000, 75000);
     eklemeliSiralama(dizi75000, 75000);
     secmeliSiralama(dizi75000, 75000);
     hizliSiralama(dizi75000, 75000);
     yiginSiralama(dizi75000, 75000);
 
-    cout << endl << "|   150000  |    ";
+    cout << endl << "|   150000  | ";
     kabarcikSiralama(dizi150000, 150000);
     eklemeliSiralama(dizi150000, 150000);
     secmeliSiralama(dizi150000, 150000);
     hizliSiralama(dizi150000, 150000);
     yiginSiralama(dizi150000, 150000);
-
-    cout << endl;
+    cout << endl << "|----------------------------------------------------------------------------|" << endl << endl;
 }
 
 int main(int argc, char *argv[])
 {
     birinciSoru();
-    setprecision(4);
     ikinciSoru();
     return 0;
 }
