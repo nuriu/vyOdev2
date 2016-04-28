@@ -24,7 +24,6 @@
 // SIRALAMA SINIFLARI (2. Soru)
 //------------------------------------------------------------------------------
 #include <ctime>
-
 #include <kabarciksiramala.hpp>
 #include <eklemelisiralama.hpp>
 #include <secmelisiralama.hpp>
@@ -171,8 +170,7 @@ void kabarcikSiralama(int dizi[], int boyut)
     int baslangic = clock();
     k.Sirala(geciciDizi, boyut);
     int son = clock();
-    cout << "|\t" << boyut << " elemanlı: "
-         << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << endl;
+    cout << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << "\t|\t";
 }
 
 void eklemeliSiralama(int dizi[], int boyut)
@@ -182,8 +180,7 @@ void eklemeliSiralama(int dizi[], int boyut)
     int baslangic = clock();
     e.Sirala(geciciDizi, boyut);
     int son = clock();
-    cout << "|\t" << boyut << " elemanlı: "
-         << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << endl;
+    cout << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << "\t|\t";
 }
 
 void secmeliSiralama(int dizi[], int boyut)
@@ -193,8 +190,7 @@ void secmeliSiralama(int dizi[], int boyut)
     int baslangic = clock();
     s.Sirala(geciciDizi, boyut);
     int son = clock();
-    cout << "|\t" << boyut << " elemanlı: "
-         << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << endl;
+    cout << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << "\t|\t";
 }
 
 void hizliSiralama(int dizi[], int boyut)
@@ -204,8 +200,7 @@ void hizliSiralama(int dizi[], int boyut)
     int baslangic = clock();
     h.Sirala(geciciDizi, 0, boyut - 1);
     int son = clock();
-    cout << "|\t" << boyut << " elemanlı: "
-         << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << endl;
+    cout << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << "\t|\t";
 }
 
 void yiginSiralama(int dizi[], int boyut)
@@ -215,8 +210,7 @@ void yiginSiralama(int dizi[], int boyut)
     int baslangic = clock();
     y.Sirala(geciciDizi, boyut);
     int son = clock();
-    cout << "|\t" << boyut << " elemanlı: "
-         << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << endl;
+    cout << (son - baslangic)/double(CLOCKS_PER_SEC)*1000 << "\t|";
 }
 
 void ikinciSoru()
@@ -236,21 +230,28 @@ void ikinciSoru()
     RastgeleVeriUret(dizi15000, 15000);
     RastgeleVeriUret(dizi75000, 75000);
     RastgeleVeriUret(dizi150000, 150000);
+
+    cout << "|----------------------------------------------------------------------" << endl;
+    cout << "|   BOYUT   |  KABARCIK  |  EKLEMELİ  |  SEÇMELİ  |  HIZLI  |  YIĞIN  |" << endl;
+    cout << "|----------------------------------------------------------------------" << endl;
+
     //--------------------------------------------------------------------------
     // KABARCIK SIRALAMA
     //--------------------------------------------------------------------------
-    cout << "|--------------------------------------------------------" << endl;
-    cout << "|\tKABARCIK SIRALAMA" << endl;
-    cout << "|--------------------------------------------------------" << endl;
-    cout << "|\t" << endl;
+    cout << "|    100    |    ";
     kabarcikSiralama(dizi100, 100);
+    eklemeliSiralama(dizi100, 100);
+    secmeliSiralama(dizi100, 100);
+    hizliSiralama(dizi100, 100);
+    yiginSiralama(dizi100, 100);
+    /*
     kabarcikSiralama(dizi750, 750);
     kabarcikSiralama(dizi1500, 1500);
     kabarcikSiralama(dizi7500, 7500);
     kabarcikSiralama(dizi15000, 15000);
     kabarcikSiralama(dizi75000, 75000);
-    kabarcikSiralama(dizi150000, 150000);
-    cout << "|\t" << endl;
+    kabarcikSiralama(dizi150000, 150000);*/
+    /*
     //--------------------------------------------------------------------------
     // EKLEMELİ SIRALAMA
     //--------------------------------------------------------------------------
@@ -315,12 +316,14 @@ void ikinciSoru()
     yiginSiralama(dizi150000, 150000);
     cout << "|\t" << endl;
     cout << "|--------------------------------------------------------" << endl;
+    */
+    cout << endl;
 }
 
 int main(int argc, char *argv[])
 {
-    birinciSoru();
-    //ikinciSoru();
+    //birinciSoru();
+    ikinciSoru();
     return 0;
 }
 
